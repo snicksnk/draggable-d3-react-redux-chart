@@ -1,0 +1,5 @@
+exports[`Test MnNode test render node 1`] = `
+<g>
+  <rect />
+</g>
+`;
