@@ -22,5 +22,5 @@ Now you can drag and scroll
 
 https://github.com/snicksnk/draggable-d3-react-redux-chart/blob/master/app/painters/drawChart.js#L53-L82
 
-## <canvas> element
+## Canvas element
 https://github.com/snicksnk/draggable-d3-react-redux-chart/blob/master/app/components/LineChart.js#L40
