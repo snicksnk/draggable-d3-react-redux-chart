@@ -1,6 +1,5 @@
 export const xAxis = (settings, xScale) => ctx => {
   const { height, chartOffset } = settings;
-  console.log('xAxis-settings', settings);
   //console.log('xAxis-xScale-settings-ctx', ctx);
   const tickCount = 10;
   const tickSize = 6;
