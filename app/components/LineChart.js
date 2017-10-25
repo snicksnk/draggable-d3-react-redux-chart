@@ -18,7 +18,7 @@ export default class LineChart extends Component {
   componentDidMount() {
     const { updateViewport } = this.props.actions;
     zoomHandler(this.canvas)(e => {
-      const offset = e.x > 0 ? Math.round(e.x) / 5 : 0;
+      const offset = e.x > 0 ? Math.round(e.x) / 7 : 0;
       const limit = Math.round(e.k * 100);
       updateViewport({ offset, limit });
     });
@@ -37,7 +37,7 @@ export default class LineChart extends Component {
     const { points, limit, offset } = this.props;
     const result = (<div>
       <div>Limit: {limit} Offset: {offset}</div>
-      <canvas ref={this.draw(settings, points)} width={this.width} height={this.height} onClick={this.onClick} />
+      <canvas style={{ cursor: 'move' }} ref={this.draw(settings, points)} width={this.width} height={this.height} onClick={this.onClick} />
     </div>);
     return result;
   }

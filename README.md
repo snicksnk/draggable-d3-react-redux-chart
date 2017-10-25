@@ -1,4 +1,4 @@
-# Draggable line chart
+# Draggable canvas line chart
 
 ## Run the app
 

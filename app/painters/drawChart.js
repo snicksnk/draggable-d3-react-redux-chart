@@ -1,4 +1,6 @@
 import * as d3 from 'd3';
+import { xAxis, yAxis } from './axis';
+
 /* eslint-disable no-param-reassign */
 const applyDraw = ctx => painter => {
   ctx.save();
@@ -28,12 +30,14 @@ const drawLine = (settings, scales, points) => ctx => {
   const line = d3.line()
     .x(d => xScale(d.time))
     .y(d => yScale(d.value))
+    .curve(d3.curveStepAfter)
     .context(ctx);
 
   const area = d3.area()
     .x(d => xScale(d.time))
     .y1(d => yScale(d.value))
     .y0(() => height - chartOffset.y)
+    .curve(d3.curveStepAfter)
     .context(ctx);
 
   ctx.beginPath();
@@ -72,5 +76,7 @@ export const drawChart = (settings, points) => ctx => {
   ctx.clearRect(0, 0, width, height);
 
   applyD(drawLine({ height, chartOffset }, { xScale, yScale }, points));
+  applyD(xAxis(settings, xScale));
+  applyD(yAxis(settings, yScale));
   ctx.restore();
 };
