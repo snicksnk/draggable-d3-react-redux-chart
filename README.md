@@ -1,8 +1,10 @@
 # Draggable canvas line chart
 
-## Run the app
+## Demo page
 
-# stack of technologies
+[https://snicksnk.github.io/draggable-d3-react-redux-chart/](https://snicksnk.github.io/draggable-d3-react-redux-chart/)
+
+## stack of technologies
 
 - d3
 - react
@@ -10,10 +12,15 @@
 - reselect
 - redux-saga(will be used soon)
 
-# Installing
+## Installing
 0. ```yarn install```
 0. ```yarn start```
 
 Now you can drag and scroll
 
-[https://snicksnk.github.io/draggable-d3-react-redux-chart/](https://snicksnk.github.io/draggable-d3-react-redux-chart/)
+## Main draw function
+
+https://github.com/snicksnk/draggable-d3-react-redux-chart/blob/master/app/painters/drawChart.js#L53-L82
+
+## Canvas element
+https://github.com/snicksnk/draggable-d3-react-redux-chart/blob/master/app/components/LineChart.js#L40
