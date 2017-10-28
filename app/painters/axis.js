@@ -1,6 +1,5 @@
 export const xAxis = (settings, xScale) => ctx => {
   const { height, chartOffset } = settings;
-  //console.log('xAxis-xScale-settings-ctx', ctx);
   const tickCount = 10;
   const tickSize = 6;
   const ticks = xScale.ticks(tickCount);
@@ -8,7 +7,7 @@ export const xAxis = (settings, xScale) => ctx => {
 
   ctx.beginPath();
   // console.log('xAxis-tick-d', ticks);
-  ticks.forEach(function (d) {
+  ticks.forEach(d => {
     ctx.moveTo(xScale(d), height - tickSize - chartOffset.y);
     ctx.lineTo(xScale(d), height - chartOffset.y);
   });
@@ -17,10 +16,10 @@ export const xAxis = (settings, xScale) => ctx => {
 
   ctx.textAlign = 'center';
   ctx.textBaseline = 'top';
-  ticks.forEach(function (d) {
+  ticks.forEach(d => {
     ctx.fillText(tickFormat(d), xScale(d), height - chartOffset.y - tickSize - 10);
   });
-}
+};
 
 export const yAxis = (settings, yScale) => ctx => {
   const { chartOffset } = settings;
@@ -31,7 +30,7 @@ export const yAxis = (settings, yScale) => ctx => {
   const tickFormat = yScale.tickFormat(tickCount);
 
   ctx.beginPath();
-  ticks.forEach(function (d) {
+  ticks.forEach(d => {
     ctx.moveTo(chartOffset.x, yScale(d));
     ctx.lineTo(chartOffset.x + tickSize, yScale(d));
   });
@@ -40,7 +39,7 @@ export const yAxis = (settings, yScale) => ctx => {
   ctx.stroke();
   ctx.textAlign = 'right';
   ctx.textBaseline = 'middle';
-  ticks.forEach(function(d) {
+  ticks.forEach(d => {
     ctx.fillText(tickFormat(d), chartOffset.x, yScale(d));
   });
 

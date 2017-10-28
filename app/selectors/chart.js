@@ -7,7 +7,11 @@ const getOffset = state => state.chart.offset;
 export const getPointsInViewport = createSelector(
   [getPoints, getOffset, getLimit],
   (points, offset, limit) => {
-    const maxTime = points[points.length - 1].time;
-    return points.filter(point => point.time < (maxTime - offset) && point.time > (maxTime - offset - limit));
+    if (points.length < 1) {
+      return [];
+    } else {
+      const maxTime = points[points.length - 1].time;
+      return points.filter(point => point.time < (maxTime - offset) && point.time > (maxTime - offset - limit));
+    }
   }
 );

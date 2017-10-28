@@ -1,6 +1,9 @@
-import { fork } from 'redux-saga/effects';
+import { put, fork, takeEvery, all } from 'redux-saga/effects';
+import { delay } from 'redux-saga';
+import { watchStartLoadPoints } from './chartData';
 
-function* rootSaga() {
+export default function* rootSaga() {
+  yield all([
+    watchStartLoadPoints()
+  ]);
 }
-
-export default rootSaga;

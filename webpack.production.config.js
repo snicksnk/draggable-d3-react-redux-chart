@@ -54,6 +54,19 @@ module.exports = {
     ],
 
     module: {
+        rules: [
+            {
+              enforce: "pre",
+              test: /\.js$/,
+              exclude: /node_modules/,
+              loader: "eslint-loader",
+            },
+            {
+              test: /\.js$/,
+              exclude: /node_modules/,
+              loader: "babel-loader",
+            },
+        ],
         // loaders handle the assets, like transforming sass to css or jsx to js.
         loaders: [{
             test: /\.js?$/,

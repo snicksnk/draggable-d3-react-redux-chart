@@ -16,12 +16,13 @@ export default class LineChart extends Component {
   }
 
   componentDidMount() {
-    const { updateViewport } = this.props.actions;
+    const { updateViewport, startLoadPoints } = this.props.actions;
     zoomHandler(this.canvas)(e => {
       const offset = e.x > 0 ? Math.round(e.x) / 7 : 0;
       const limit = Math.round(e.k * 100);
       updateViewport({ offset, limit });
     });
+    startLoadPoints();
   }
 
   draw = (settings, points) => (canvas) => {

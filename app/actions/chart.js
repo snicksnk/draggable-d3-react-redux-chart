@@ -6,3 +6,11 @@ export function updateViewport({ offset, limit }) {
     }
   };
 }
+
+export function startLoadPoints() {
+  return {
+    type: 'CHART_POINTS_LOAD_START',
+    payload: {
+    }
+  };
+}
